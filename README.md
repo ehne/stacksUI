@@ -11,7 +11,7 @@
   </a>
 </p>-->
 
-> A UI layouting library that uses a stack-based paradigm. Similar to how SwiftUI works.
+> a UI layout library for the web that uses the paradigm of stacks. Inspired by SwiftUI.
 
 discover StacksUI on the website: [https://darcylf.me/StacksUI](https://darcylf.me/StacksUI)
 
