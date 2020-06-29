@@ -1,10 +1,9 @@
 .h-stack {
 	display: flex;
-	align-items:center;
 	&> :not(template) ~ :not(template) {
     --space-x-reverse: 0;
-    margin-right: calc(0.5rem * var(--space-x-reverse)) !important;
-    margin-left: calc(0.5rem * (1 - var(--space-x-reverse)));
+    margin-right: calc(8px * var(--space-x-reverse)) !important;
+    margin-left: calc(8px * (1 - var(--space-x-reverse)));
 }
 	.spacer {
 		flex-grow:1
@@ -20,6 +19,16 @@
 			}
 		}
 	}
+
+	&.middle{
+		align-items:center;
+	}
+	&.top{
+		align-items:flex-start;
+	}
+	&.bottom{
+		align-items:flex-end;
+	}
 	
 	
 	
@@ -33,5 +42,8 @@
 	&>input{
 		width:100%;
 		margin-bottom:0px;
+	}
+	.spacer{
+		height:8px
 	}
 }

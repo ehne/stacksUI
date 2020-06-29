@@ -1,67 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StacksUI | darcylf.me</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ehne/stacksUI@master/dist/stacksUI.min.css">
+    <link rel="stylesheet" href="../dist/StacksUI.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.1/dist/alpine.min.js"></script>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/atom-one-light.min.css"
+    />
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <style>
+        h2{
+            font-size: 1.2em;
+        }
+        .css{
+            color:#50a14f;
+        }
+    </style>
+  </head>
+  <body>
     <div class="main-view">
-        <div class="v-stack">
-            <div class="h-stack m-keep">
-                <div class="text"><a href="https://github.com/ehne/StacksUI">Github</a></div>
-                <div class="spacer"></div>
-                <div class="text"><a href="https://cdn.jsdelivr.net/gh/ehne/StacksUI@master/dist/StacksUI.min.css">Download</a></div>
-            </div>
-            <div class="image">
-                <img src="" alt="">
-            </div>
-            <div class="text">
-                <h1 style="font-size:2em">
-                    <b>StacksUI</b>
-                </h1>
-            </div>
-            <div class="v-stack">
-                <div class="text">
-                    <h2>
-                        <b>About</b>
-                    </h2>
-                </div>
-                <div class="text">
-                   StacksUI is a simple UI layouting system. StacksUI uses the paradigm of "stacks", both vertical and horizontal.
-                </div>
-            </div>
-            <div class="v-stack">
-                <div class="text">
-                    <h2><b>Vertical Stacks <code>.v-stack</code></b></h2>
-                </div>
-                <div class="text">
-                    Vertical stacks are vertical elements that contain blocks, or "views". Each element in a v-stack includes 8px of bottom margin, to visually separate the contents of each element in the stack.
-                </div>
-                <div class="h-stack">
-                    <div class="view">
-                        <div class="text">
-                            To use a vertical stack, simply place the <code>.v-stack</code> class onto a div, and then put elements inside of that parent div, this will create a v-stack.
-                        </div>
-                    </div>
-                    <div class="view">
-                        <div class="v-stack">
-                            <div class="text">
-                                <h3><b>Example</b></h3>
-                            </div>
-                            <div class="v-stack debug">
-                                <div class="view"></div>
-                                <div class="view"></div>
-                                <div class="view"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+      <div class="v-stack">
+        <div class="h-stack m-keep">
+          <div class="text">
+            <a href="https://github.com/ehne/StacksUI">Github</a>
+          </div>
+          <div class="spacer"></div>
+          <div class="text">
+            <a
+              href="https://cdn.jsdelivr.net/gh/ehne/StacksUI@master/dist/StacksUI.min.css"
+              >Download</a
+            >
+          </div>
         </div>
+        <div class="image">
+          <img src="./logo.png" alt="StacksUI logo" />
+        </div>
+        <div class="text">
+          <h1 style="font-size: 2em;">
+            <b>StacksUI</b>
+          </h1>
+        </div>
+        <div class="v-stack">
+          <div class="text">
+            <h2>
+              <b>About</b>
+            </h2>
+          </div>
+          <div class="text">
+            StacksUI is a simple UI layouting system. StacksUI uses the paradigm
+            of "stacks", both vertical and horizontal.
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="v-stack" x-data="{code:false}">
+          <div class="text">
+            <h2>
+              <b>Vertical Stacks <code class="css">.v-stack</code></b>
+            </h2>
+          </div>
+          <div class="text">
+            Vertical stacks are vertical elements that contain blocks, or
+            "views". Each element in a v-stack includes 8px of bottom margin, to
+            visually separate the contents of each element in the stack.
+          </div>
+          <div class="v-stack top">
+            <div class="view">
+              <div class="text">
+                To use a vertical stack, simply place the
+                <code class="css">.v-stack</code> class onto a div, and then put elements
+                inside of that parent div, this will create a v-stack.
+              </div>
+            </div>
+            <div class="view">
+              <div class="v-stack">
+                <div class="text">
+                  <h3><b>Example</b></h3>
+                </div>
+                <div class="v-stack debug">
+                  <div class="view">
+                    this is the first element
+                  </div>
+                  <div class="view">
+                    this is the second
+                  </div>
+                  <div class="view">
+                    and now, the last one
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-stack middle m-keep">
+            <input
+              type="checkbox"
+              name="vStackCodeView"
+              id="vStackCodeView"
+              x-model="code"
+            />
+
+            <label for="vStackCodeView">View Code</label>
+          </div>
+          <div class="h-stack top">
+            <div class="view" x-show="code">
+              <pre><code class="html">&lt;div class=&quot;v-stack&quot;&gt;
+    &lt;div class=&quot;v-stack&quot;&gt;
+        &lt;div class=&quot;view&quot;&gt;
+            this is the first element
+        &lt;/div&gt;
+        &lt;div class=&quot;view&quot;&gt;
+            this is the second
+        &lt;/div&gt;
+        &lt;div class=&quot;view&quot;&gt;
+            and now, the last one
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="v-stack">
+          <div class="text">
+            <h2>
+              <b>Horizontal Stacks <code class="css">.h-stack</code></b>
+            </h2>
+          </div>
+          <div class="text">
+            <p>Horizontal stacks are like v-stacks, but horizontal. meaning that elements get put next to each other sidways.</p>
+          </div>
+          <div class="text">
+              <p>To create a horizontal stack, just add the class <code class="css">.h-stack</code> to a div, and then put elements inside of that parent div, this will create a h-stack.</p>
+          </div>
+          <div class="text">
+              <p><i>It is important to note that on mobile devices (screen width < 400px) h-stacks will not be horizontal, instead they will show as full-width v-stacks. To stop this from happening, simply add the <code class="css">.m-keep</code> class to the h-stack element, however it is not recommended that you do this often.</i></p>
+          </div>
+          <div class="v-stack">
+              <div class="text">
+                  <h3><b>Example</b></h3>
+              </div>
+              <div class="h-stack debug">
+                  <div class="text">one</div>
+                  <div class="text">two</div>
+                  <div class="text">three</div>
+              </div>
+              <div class="v-stack" x-data="{code:false}">
+                <div class="h-stack middle m-keep">
+                    <input
+                      type="checkbox"
+                      name="hStackCodeView"
+                      id="hStackCodeView"
+                      x-model="code"
+                    />
+        
+                    <label for="vStackCodeView">View Code</label>
+                </div>
+                <div class="view" x-show="code">
+                    <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
+    &lt;div class=&quot;text&quot;&gt;one&lt;/div&gt;
+    &lt;div class=&quot;text&quot;&gt;two&lt;/div&gt;
+    &lt;div class=&quot;text&quot;&gt;three&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
