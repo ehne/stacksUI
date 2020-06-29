@@ -31,7 +31,7 @@
     </style>
   </head>
   <body>
-    <div class="main-view">
+    <div class="main-view" x-data="{debug:false}" x-bind:class="{'debug':debug}">
       <div class="v-stack">
         <!--nav-->
         <div class="h-stack m-keep">
@@ -321,6 +321,36 @@
         </div>
 
       </div>
+
+      <!--footer-->
+      <div class="v-stack">
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="h-stack m-keep">
+            <div class="spacer"></div>
+            <div class="text">
+                <p>made by <a href="https://darcylf.me">darcylf</a> in 2020</p>
+            </div>
+            <div class="spacer"></div>
+        </div>
+        <div class="h-stack">
+            <div class="spacer"></div>
+            <div class="v-stack">
+                <div class="h-stack middle m-keep">
+                    <input
+                      type="checkbox"
+                      name="debug"
+                      id="debug"
+                      x-model="debug"
+                    />
+        
+                    <label for="debug">Enable debug mode</label>
+                  </div>
+            </div>
+            <div class="spacer"></div>
+        </div>
+      </div>
+      
     </div>
   </body>
 </html>
