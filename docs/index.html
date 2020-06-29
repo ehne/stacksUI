@@ -25,11 +25,15 @@
         .css{
             color:#50a14f;
         }
+        .main-view{
+            padding-bottom:3em
+        }
     </style>
   </head>
   <body>
     <div class="main-view">
       <div class="v-stack">
+        <!--nav-->
         <div class="h-stack m-keep">
           <div class="text">
             <a href="https://github.com/ehne/StacksUI">Github</a>
@@ -42,14 +46,20 @@
             >
           </div>
         </div>
+
+        <!--logo-->
         <div class="image">
           <img src="./logo.png" alt="StacksUI logo" />
         </div>
+
+        <!--title (h1)-->
         <div class="text">
           <h1 style="font-size: 2em;">
             <b>StacksUI</b>
           </h1>
         </div>
+
+        <!--about-->
         <div class="v-stack">
           <div class="text">
             <h2>
@@ -58,10 +68,29 @@
           </div>
           <div class="text">
             StacksUI is a simple UI layouting system. StacksUI uses the paradigm
-            of "stacks", both vertical and horizontal.
+            of vertical and horizontal "stacks" for laying out content. StacksUI is inspired by SwiftUI.
           </div>
         </div>
+
         <div class="spacer"></div>
+
+        <!--installing-->
+        <div class="v-stack">
+            <div class="text">
+                <h2><b>Installing</b></h2>
+            </div>
+            <div class="text">The simplest way to install StacksUI on your website is by placing this snippet in the head tag of your html.</div>
+            <div class="div">
+                <pre><code class="html">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ehne/StacksUI@master/dist/StacksUI.min.css&quot;/&gt;
+
+</code></pre>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!--v-stack-->
         <div class="v-stack" x-data="{code:false}">
           <div class="text">
             <h2>
@@ -131,6 +160,7 @@
 
         <div class="spacer"></div>
 
+        <!--h-stack-->
         <div class="v-stack">
           <div class="text">
             <h2>
@@ -143,6 +173,9 @@
           <div class="text">
               <p>To create a horizontal stack, just add the class <code class="css">.h-stack</code> to a div, and then put elements inside of that parent div, this will create a h-stack.</p>
           </div>
+          <div class="text">
+            <p>To adjust the vertical alignment of elements within the stack, simply add one of these classes along with the <code class="css">.h-stack</code> class: <code class="css">.top, .middle, .bottom</code>.</p>
+        </div>
           <div class="text">
               <p><i>It is important to note that on mobile devices (screen width < 400px) h-stacks will not be horizontal, instead they will show as full-width v-stacks. To stop this from happening, simply add the <code class="css">.m-keep</code> class to the h-stack element, however it is not recommended that you do this often.</i></p>
           </div>
@@ -164,7 +197,7 @@
                       x-model="code"
                     />
         
-                    <label for="vStackCodeView">View Code</label>
+                    <label for="hStackCodeView">View Code</label>
                 </div>
                 <div class="view" x-show="code">
                     <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
@@ -176,6 +209,117 @@
               </div>
           </div>
         </div>
+
+        <div class="spacer"></div>
+
+        <!--views-->
+        <div class="v-stack">
+            <div class="text">
+                <h2><b>Views</b></h2>
+            </div>
+            <div class="text">
+                <p>Views act just like any other normal div, except for that they take up the full width that they can. This is very useful in h-stacks, as putting two views next to each other means that the h-stack will be split 50/50.</p>
+            </div>
+            <div class="text">
+                <p>To make a view, simply add the <code class="css">.view</code> class to a div.</p>
+            </div>
+            <div class="text">
+                <p><i>And of course, if they are put into a h-stack they will be shown as full-width on mobile, unless the h-stack has the <code class="css">.m-keep</code> class.</i></p>
+            </div>
+            <div class="v-stack">
+                <div class="text">
+                    <h3><b>Example</b></h3>
+                </div>
+                <div class="h-stack debug">
+                    <div class="view">The first half</div>
+                    <div class="view">the second half.</div>
+                </div>
+                <div class="h-stack debug">
+                    <div class="view">The first half</div>
+                    <div class="view">the second half</div>
+                    <div class="view">the third half.</div>
+                </div>
+            </div>
+            <div class="v-stack" x-data="{code:false}">
+                <div class="h-stack middle m-keep">
+                    <input
+                      type="checkbox"
+                      name="viewCodeView"
+                      id="viewCodeView"
+                      x-model="code"
+                    />
+        
+                    <label for="viewCodeView">View Code</label>
+                </div>
+                <div class="view" x-show="code">
+                    <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
+    &lt;div class=&quot;view&quot;&gt;The first half&lt;/div&gt;
+    &lt;div class=&quot;view&quot;&gt;the second half.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h-stack&quot;&gt;
+    &lt;div class=&quot;view&quot;&gt;The first half&lt;/div&gt;
+    &lt;div class=&quot;view&quot;&gt;the second half&lt;/div&gt;
+    &lt;div class=&quot;view&quot;&gt;the third half.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!--spacer-->
+        <div class="v-stack">
+            <div class="text">
+                <h2><b>Spacer</b></h2>
+            </div>
+            <div class="text">
+                <p>A spacer will automatically fill in the space between two elements in a h-stack. When a spacer is put into a v-stack, it will create a vertical gap between the elements.</p>
+            </div>
+            <div class="text">
+                <p>To add a spacer, just add the <code class="css">.spacer</code> class to a div in a stack.</p>
+            </div>
+            <div class="v-stack">
+                <div class="text">
+                    <h3><b>Example</b></h3>
+                </div>
+                <div class="h-stack debug middle m-keep">
+                    <div class="text">left</div>
+                    <div class="spacer"></div>
+                    <div class="text">right</div>
+                </div>
+                <div class="v-stack debug">
+                    <div class="text">top</div>
+                    <div class="spacer"></div>
+                    <div class="text">bottom</div>
+                </div>
+            </div>
+
+            <div class="v-stack" x-data="{code:false}">
+                <div class="h-stack middle m-keep">
+                    <input
+                      type="checkbox"
+                      name="spacerCodeView"
+                      id="spacerCodeView"
+                      x-model="code"
+                    />
+        
+                    <label for="spacerCodeView">View Code</label>
+                </div>
+                <div class="view" x-show="code">
+                    <pre><code class="html">&lt;div class=&quot;h-stack middle m-keep&quot;&gt;
+    &lt;div class=&quot;text&quot;&gt;left&lt;/div&gt;
+    &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;text&quot;&gt;right&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;v-stack&quot;&gt;
+    &lt;div class=&quot;text&quot;&gt;top&lt;/div&gt;
+    &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;text&quot;&gt;bottom&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+
       </div>
     </div>
   </body>

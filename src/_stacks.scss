@@ -5,7 +5,7 @@
     margin-right: calc(8px * var(--space-x-reverse)) !important;
     margin-left: calc(8px * (1 - var(--space-x-reverse)));
 }
-	.spacer {
+	&>.spacer {
 		flex-grow:1
 	}
 	&:not(.m-keep){
@@ -43,7 +43,7 @@
 		width:100%;
 		margin-bottom:0px;
 	}
-	.spacer{
+	&>.spacer{
 		height:8px
 	}
 }

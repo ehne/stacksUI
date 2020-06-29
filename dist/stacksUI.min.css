@@ -85,9 +85,9 @@ code {
   display: flex; }
   .h-stack > :not(template) ~ :not(template) {
     --space-x-reverse: 0;
-    margin-right: calc(0.5rem * var(--space-x-reverse)) !important;
-    margin-left: calc(0.5rem * (1 - var(--space-x-reverse))); }
-  .h-stack .spacer {
+    margin-right: calc(8px * var(--space-x-reverse)) !important;
+    margin-left: calc(8px * (1 - var(--space-x-reverse))); }
+  .h-stack > .spacer {
     flex-grow: 1; }
   @media (max-width: 400px) {
     .h-stack:not(.m-keep) {
@@ -112,7 +112,7 @@ code {
   .v-stack > input {
     width: 100%;
     margin-bottom: 0px; }
-  .v-stack .spacer {
+  .v-stack > .spacer {
     height: 8px; }
 
 .main-view {
