@@ -168,14 +168,14 @@ button {
   color: inherit;
   text-decoration: none; }
 
-.list > .view {
+.list > .h-stack, .list .v-stack {
   padding: 8px;
   border-bottom: 1px solid #e6e6e6; }
-
-.list > .view:hover {
-  background-color: rgba(0, 0, 0, 0.1); }
 
 .list .v-stack {
   margin-bottom: 0px; }
   .list .v-stack > * {
     margin-bottom: 0px; }
+
+.list.nav > .h-stack:hover, .list.nav .v-stack:hover {
+  background-color: rgba(0, 0, 0, 0.1); }

@@ -20,7 +20,16 @@
       hljs.initHighlightingOnLoad();
     </script>
     <style>
-html { font-family: 'Inter', sans-serif; }
+      @font-face{
+    font-family: 'JetBrains Mono';
+    src: url('./JetBrainsMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+code{
+  font-family:"JetBrains Mono", 'Courier New', Courier, monospace;
+}
+html { font-family: 'Inter', sans-serif; font-size:1em }
         h2{
             font-size: 1.2em;
         }
@@ -49,7 +58,7 @@ html { font-family: 'Inter', sans-serif; }
           <div class="spacer"></div>
           <div class="text">
             <a
-              href="https://cdn.jsdelivr.net/gh/ehne/StacksUI@master/dist/StacksUI.min.css"
+              href="https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css"
               >Download</a
             >
           </div>
@@ -74,8 +83,13 @@ html { font-family: 'Inter', sans-serif; }
               <b>About</b>
             </h2>
           </div>
-          <div class="text">
-            StacksUI is a UI layout library for the web that uses the paradigm of stacks. StacksUI uses these vertical and horizontal "stacks" to layout content. StacksUI is inspired by SwiftUI.
+          <div class="view">
+            <ul class="v-stack">
+              <li>- StacksUI is a UI layout library for the web that uses the paradigm of stacks.</li>
+              <li>- StacksUI uses these vertical and horizontal "stacks" to layout content.</li>
+              <li>- StacksUI is inspired by SwiftUI.</li>
+            </ul>
+              
           </div>
         </div>
 
@@ -222,10 +236,10 @@ html { font-family: 'Inter', sans-serif; }
         <!--views-->
         <div class="v-stack">
             <div class="text">
-                <h2><b>Views</b></h2>
+                <h2><b>Views <code class="css">.view</code></b></h2>
             </div>
             <div class="text">
-                <p>Views act just like any other normal div, except for that they take up the full width that they can. This is very useful in h-stacks, as putting two views next to each other means that the h-stack will be split 50/50.</p>
+                <p>Views act just like any other normal div, except for that they take up the full width that they can. This is very useful in h-stacks, as putting two views next to each other means that the h-stack will be split 50/50. You should only use a <code class="css">.view</code> class when you can't use a v-stack or h-stack.</p>
             </div>
             <div class="text">
                 <p>To make a view, simply add the <code class="css">.view</code> class to a div.</p>
@@ -277,7 +291,7 @@ html { font-family: 'Inter', sans-serif; }
         <!--spacer-->
         <div class="v-stack">
             <div class="text">
-                <h2><b>Spacer</b></h2>
+                <h2><b>Spacer <code class="css">.spacer</code></b></h2>
             </div>
             <div class="text">
                 <p>A spacer will automatically fill in the space between two elements in a h-stack. When a spacer is put into a v-stack, it will create a vertical gap between the elements.</p>
@@ -327,6 +341,98 @@ html { font-family: 'Inter', sans-serif; }
             </div>
         </div>
 
+        <div class="spacer"></div>
+
+        <!--list-->
+        <div class="v-stack">
+          <div class="text">
+            <h2><b>List <code class="css">.list</code></b></h2>
+          </div>
+          <div class="text">
+            <p>Lists are similar to v-stacks, however, they have a couple of nice features. The list element will assume that its immediate children stacks (either h-stack or v-stack) are rows of the list, separating each row by a line.</p>
+          </div>
+          <div class="text">
+            <p>To create a list, just use the <code class="css">.list</code> class on an element containing stacks.</p>
+          </div>
+          <div class="v-stack">
+            <div class="text">
+              <h3><b>Example</b></h3>
+            </div>
+            <div class="list">
+              <div class="h-stack view">
+                <div class="text">One</div>
+              </div>
+              <div class="h-stack view">
+                <div class="text">Two</div>
+              </div>
+              <div class="h-stack view">
+                <div class="text">Three</div>
+              </div>
+            </div>
+            <div class="v-stack" x-data="{code:false}">
+              <div class="h-stack middle m-keep">
+                  <input
+                    type="checkbox"
+                    name="listCodeView"
+                    id="listCodeView"
+                    x-model="code"
+                  />
+      
+                  <label for="listCodeView">View Code</label>
+              </div>
+              <div class="view" x-show="code">
+                  <pre><code class="html">&lt;div class=&quot;list&quot;&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;One&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Two&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Three&lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;&#10;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="spacer"></div>
+
+        <!--list nav-->
+        <div class="v-stack">
+          <div class="text">
+            <h2><b>Navigation List <code class="css">.nav</code></b></h2>
+          </div>
+          <div class="text">
+            <p>Navigation lists are a subset of list, that have a lot of the same features, however a navigation list is designed to only be used with a list of links for the user to select.</p>
+          </div>
+          <div class="text">
+            <p>To create a navigation list, simply add the <code class="css">.nav</code> class to an element that already has the <code class="css">.list</code> class. You will also need to turn each stack in a <code class="css">a</code> tag (rather than a <code class="css">div</code>).</p>
+          </div>
+          <div class="v-stack">
+            <div class="text">
+              <h3><b>Example</b></h3>
+            </div>
+            <div class="list nav">
+              <a href="https://github.com/ehne/StacksUI" class="h-stack m-keep">
+                  <div class="text">Github</div>
+                  <div class="spacer"></div>
+                  <div class="text">></div>
+              </a>
+              <a href="https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css" class="h-stack m-keep">
+                  <div class="text">Download</div>
+                  <div class="spacer"></div>
+                  <div class="text">></div>
+              </a>
+            </div>
+            <div class="v-stack" x-data="{code:false}">
+              <div class="h-stack middle m-keep">
+                  <input
+                    type="checkbox"
+                    name="navCodeView"
+                    id="navCodeView"
+                    x-model="code"
+                  />
+      
+                  <label for="navCodeView">View Code</label>
+              </div>
+              <div class="view" x-show="code">
+                  <pre><code class="html">&lt;div class=&quot;list nav&quot;&gt;&#10;    &lt;a href=&quot;https://github.com/ehne/StacksUI&quot; class=&quot;h-stack m-keep&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Github&lt;/div&gt;&#10;        &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;&#10;        &lt;div class=&quot;text&quot;&gt;&gt;&lt;/div&gt;&#10;    &lt;/a&gt;&#10;    &lt;a href=&quot;https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css&quot; class=&quot;h-stack m-keep&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Download&lt;/div&gt;&#10;        &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;&#10;        &lt;div class=&quot;text&quot;&gt;&gt;&lt;/div&gt;&#10;    &lt;/a&gt;&#10;&lt;/div&gt;&#10;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--footer-->
