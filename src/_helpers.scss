@@ -1,0 +1,9 @@
+// just general classes and stuff to make things easier
+body{
+	font-family: sans-serif
+}
+
+.debug * {
+	background-color:hsla(0,100,62, 0.1);
+	border:solid 1px hsla(0,100,62, 0.2)
+}

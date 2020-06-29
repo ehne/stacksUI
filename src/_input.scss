@@ -1,0 +1,41 @@
+input{
+	display:block;padding:0;border-width:0; margin:0px;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  font-size:1em;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+   }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+button{
+	font-size:1em
+}

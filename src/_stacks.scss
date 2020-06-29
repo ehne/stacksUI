@@ -1,0 +1,37 @@
+.h-stack {
+	display: flex;
+	align-items:center;
+	&> :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--space-x-reverse)) !important;
+    margin-left: calc(0.5rem * (1 - var(--space-x-reverse)));
+}
+	.spacer {
+		flex-grow:1
+	}
+	&:not(.m-keep){
+		@include phone{
+			display:block;
+			&> :not(template) ~ :not(template) {
+				@include margin(null 0px);}
+			margin-bottom: 8px;
+			&>*{
+				margin-bottom:8px
+			}
+		}
+	}
+	
+	
+	
+}
+
+.v-stack {
+	margin-bottom: 8px;
+	&>*{
+		margin-bottom:8px
+	}
+	&>input{
+		width:100%;
+		margin-bottom:0px;
+	}
+}

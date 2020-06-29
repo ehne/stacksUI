@@ -1,0 +1,15 @@
+.main-view{
+	padding:8px;
+	max-width:600px;
+	@include margin(0 auto);
+	&:first-child{
+		margin-top:8px
+	}
+}
+
+.view {
+	flex-grow:1;
+	display:block;
+	flex-basis: 0;
+  flex-shrink: 1;
+}

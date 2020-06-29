@@ -1,0 +1,136 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+ul {
+  list-style: none; }
+
+button, input, select, textarea {
+  margin: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+img, video {
+  height: auto;
+  max-width: 100%; }
+
+iframe {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+td:not([align]), th:not([align]) {
+  text-align: left; }
+
+body {
+  font-family: sans-serif; }
+
+.debug * {
+  background-color: rgba(255, 61, 61, 0.1);
+  border: solid 1px rgba(255, 61, 61, 0.2); }
+
+.h-stack {
+  display: flex;
+  align-items: center; }
+  .h-stack > :not(template) ~ :not(template) {
+    --space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--space-x-reverse)) !important;
+    margin-left: calc(0.5rem * (1 - var(--space-x-reverse))); }
+  .h-stack .spacer {
+    flex-grow: 1; }
+  @media (max-width: 400px) {
+    .h-stack:not(.m-keep) {
+      display: block;
+      margin-bottom: 8px; }
+      .h-stack:not(.m-keep) > :not(template) ~ :not(template) {
+        margin-right: 0;
+        margin-left: 0; }
+      .h-stack:not(.m-keep) > * {
+        margin-bottom: 8px; } }
+
+.v-stack {
+  margin-bottom: 8px; }
+  .v-stack > * {
+    margin-bottom: 8px; }
+  .v-stack > input {
+    width: 100%;
+    margin-bottom: 0px; }
+
+.main-view {
+  padding: 8px;
+  max-width: 600px;
+  margin: 0 auto; }
+  .main-view:first-child {
+    margin-top: 8px; }
+
+.view {
+  flex-grow: 1;
+  display: block;
+  flex-basis: 0;
+  flex-shrink: 1; }
+
+input {
+  display: block;
+  padding: 0;
+  border-width: 0;
+  margin: 0px; }
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  font-size: 1em;
+  padding: 6px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+/* Removes awkward default styles on some inputs for iOS */
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+button {
+  font-size: 1em; }
+
+.list a {
+  color: inherit;
+  text-decoration: none; }
+
+.list > .view {
+  padding: 8px;
+  border-bottom: 1px solid #e6e6e6; }
+
+.list > .view:hover {
+  background-color: rgba(0, 0, 0, 0.1); }
+
+.list .v-stack {
+  margin-bottom: 0px; }
+  .list .v-stack > * {
+    margin-bottom: 0px; }
