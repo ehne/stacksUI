@@ -28,4 +28,7 @@ jobs:
       with:
         source: src/stacksUI.scss
         destination: dist/stacksUI.css
-
+    - uses: actions-go/push@master
+      with:
+        commit-message: '[Auto] build dist css'
+        remote: origin
