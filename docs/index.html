@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StacksUI | darcylf.me</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ehne/stacksUI@master/dist/stacksUI.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.1/dist/alpine.min.js"></script>
+</head>
+<body>
+    <div class="main-view">
+        <div class="v-stack">
+            <div class="h-stack m-keep">
+                <div class="text"><a href="https://github.com/ehne/StacksUI">Github</a></div>
+                <div class="spacer"></div>
+                <div class="text"><a href="https://cdn.jsdelivr.net/gh/ehne/StacksUI@master/dist/StacksUI.min.css">Download</a></div>
+            </div>
+            <div class="image">
+                <img src="" alt="">
+            </div>
+            <div class="text">
+                <h1 style="font-size:2em">
+                    <b>StacksUI</b>
+                </h1>
+            </div>
+            <div class="v-stack">
+                <div class="text">
+                    <h2>
+                        <b>About</b>
+                    </h2>
+                </div>
+                <div class="text">
+                   StacksUI is a simple UI layouting system. StacksUI uses the paradigm of "stacks", both vertical and horizontal.
+                </div>
+            </div>
+            <div class="v-stack">
+                <div class="text">
+                    <h2><b>Vertical Stacks <code>.v-stack</code></b></h2>
+                </div>
+                <div class="text">
+                    Vertical stacks are vertical elements that contain blocks, or "views". Each element in a v-stack includes 8px of bottom margin, to visually separate the contents of each element in the stack.
+                </div>
+                <div class="h-stack">
+                    <div class="view">
+                        <div class="text">
+                            To use a vertical stack, simply place the <code>.v-stack</code> class onto a div, and then put elements inside of that parent div, this will create a v-stack.
+                        </div>
+                    </div>
+                    <div class="view">
+                        <div class="v-stack">
+                            <div class="text">
+                                <h3><b>Example</b></h3>
+                            </div>
+                            <div class="v-stack debug">
+                                <div class="view"></div>
+                                <div class="view"></div>
+                                <div class="view"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

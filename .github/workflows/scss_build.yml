@@ -26,8 +26,8 @@ jobs:
     - name: Compile CSS from SCSS files
       uses: gha-utilities/sass-build@v0.2.5
       with:
-        source: src/stacksUI.scss
-        destination: dist/stacksUI.min.css
+        source: src/StacksUI.scss
+        destination: dist/StacksUI.min.css
     - uses: actions-go/push@master
       with:
         commit-message: '[Auto] build dist css'
