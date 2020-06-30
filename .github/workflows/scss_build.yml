@@ -23,12 +23,19 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Compile CSS from SCSS files
+    - name: Compile StacksUI to dist
       uses: gha-utilities/sass-build@v0.2.5
       with:
         source: src/StacksUI.scss
         destination: dist/StacksUI.min.css
+
+    - name: Compile StacksUI to docs
+      uses: gha-utilities/sass-build@v0.2.5
+      with:
+        source: src/StacksUI.scss
+        destination: dist/StacksUI.min.css
+       
     - uses: actions-go/push@master
       with:
-        commit-message: '[Auto] build dist css'
+        commit-message: '[Auto] Compiled StacksUI'
         remote: origin
