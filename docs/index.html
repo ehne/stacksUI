@@ -44,22 +44,31 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
           font-style: normal;
           background-color: hsla(42,100%,62%, 0.3);
         }
-        
     </style>
   </head>
   <body>
     <div class="main-view" x-data="{debug:false}" x-bind:class="{'debug':debug}">
       <div class="v-stack">
         <!--nav-->
-        <div class="h-stack m-keep">
+        <div class="h-stack m-keep middle">
           <div class="text">
-            <a href="https://github.com/ehne/StacksUI">Github</a>
+            <a href="https://github.com/ehne/StacksUI">            
+              <img src="https://img.shields.io/badge/%20-github-black?label=%20&style=for-the-badge&color=black" alt="Github" style="border-radius: 50px;">
+            </a>
+          </div>
+          <div class="spacer"></div>
+          <div class="image">
+            <a href="https://github.com/ehne/StacksUI/releases/tag/v1.0.0">
+              <img src="https://img.shields.io/github/v/tag/ehne/StacksUI?label=%20&style=for-the-badge&color=black" alt="Version Number" style="border-radius: 50px;">
+            </a>
           </div>
           <div class="spacer"></div>
           <div class="text">
             <a
               href="https://raw.githubusercontent.com/ehne/StacksUI/master/dist/StacksUI.min.css"
-              >Download</a
+              >
+              <img src="https://img.shields.io/badge/%20-Download-black?label=%20&style=for-the-badge&color=black" alt="Download" style="border-radius: 50px;">
+              </a
             >
           </div>
         </div>
@@ -72,7 +81,7 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
         <!--title (h1)-->
         <div class="text">
           <h1 style="font-size: 2em;">
-            <b>StacksUI</b>
+            <b>StacksUI</b> 
           </h1>
         </div>
 
