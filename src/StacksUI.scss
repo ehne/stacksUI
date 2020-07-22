@@ -4,6 +4,14 @@
 // reset everything
 @import "minireset";
 
+
+//vars that can be adjusted
+:root{
+    --SUI-m:400px;
+    --SUI-d:600px;
+}
+    
+
 // import breakpoint mixins
 @import "break";
 

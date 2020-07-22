@@ -15,64 +15,129 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/atom-one-light.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.13.1/inter.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.13.1/inter.css"
+    />
     <script>
       hljs.initHighlightingOnLoad();
     </script>
     <style>
-      @font-face{
-    font-family: 'JetBrains Mono';
-    src: url('./JetBrainsMono-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-code{
-  font-family:"JetBrains Mono", 'Courier New', Courier, monospace;
-}
-html { font-family: 'Inter', sans-serif; font-size:1em }
-        h2{
-            font-size: 1.2em;
-        }
-        .css{
-            color:#50a14f;
-        }
-        .main-view{
-            padding-bottom:3em
-        }
-        i{
-          opacity:1;
-          font-style: normal;
-          background-color: hsla(42,100%,62%, 0.3);
-        }
-        .button:hover{
-          opacity: 0.7;
-        }
+      :root {
+        --SUI-m: 1000px;
+      }
+    </style>
+    <style>
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("./JetBrainsMono-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      code {
+        font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+      }
+      html {
+        font-family: "Inter", sans-serif;
+        font-size: max(0.6em, min(1vw + 0.7em, 1em));
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+      .css {
+        color: #50a14f;
+      }
+      .css-header {
+        background-color: #fafafa;
+
+        color: #50a14f;
+        border-radius: 0.4em;
+        font-size: 0.7em;
+        padding: 0 4px;
+        font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+      }
+      .ver {
+        background-color: #e45649;
+        color: #fff;
+        border-radius: 0.4em;
+        font-size: 0.7em;
+        padding: 0 4px;
+        font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+      }
+      .main-view {
+        padding-bottom: 3em;
+      }
+      i {
+        opacity: 1;
+        font-style: normal;
+        background-color: hsla(42, 100%, 62%, 0.3);
+      }
+      .button:hover {
+        opacity: 0.7;
+      }
+      th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+  .tg{
+    width: 100%;
+    overflow-x: scroll;
+  }
+  table{
+    width:100%
+  }
     </style>
   </head>
   <body>
-    <div class="main-view" x-data="{debug:false}" x-bind:class="{'debug':debug}">
+    <div
+      class="main-view"
+      x-data="{debug:false}"
+      x-bind:class="{'debug':debug}"
+    >
       <div class="v-stack">
         <!--nav-->
         <div class="h-stack m-keep middle">
           <div class="text">
-            <a href="https://github.com/ehne/StacksUI" class="button">            
-              <img src="https://img.shields.io/badge/%20-github-black?label=%20&style=for-the-badge&color=black" alt="Github" style="border-radius: 50px;">
+            <a href="https://github.com/ehne/StacksUI" class="button">
+              <img
+                src="https://img.shields.io/badge/%20-github-black?label=%20&style=for-the-badge&color=black"
+                alt="Github"
+                style="border-radius: 50px;"
+              />
             </a>
           </div>
           <div class="spacer"></div>
           <div class="image">
-            <a href="https://github.com/ehne/StacksUI/releases/tag/v1.0.0" class="button">
-              <img src="https://img.shields.io/github/v/tag/ehne/StacksUI?label=%20&style=for-the-badge&color=black" alt="Version Number" style="border-radius: 50px;">
+            <a
+              href="https://github.com/ehne/StacksUI/releases/tag/v1.0.0"
+              class="button"
+            >
+              <img
+                src="https://img.shields.io/github/v/tag/ehne/StacksUI?label=%20&style=for-the-badge&color=black"
+                alt="Version Number"
+                style="border-radius: 50px;"
+              />
             </a>
           </div>
           <div class="spacer"></div>
           <div class="text">
             <a
               href="https://raw.githubusercontent.com/ehne/StacksUI/master/dist/StacksUI.min.css"
-              class="button">
-              <img src="https://img.shields.io/badge/%20-Download-black?label=%20&style=for-the-badge&color=black" alt="Download" style="border-radius: 50px;">
-              </a
+              class="button"
             >
+              <img
+                src="https://img.shields.io/badge/%20-Download-black?label=%20&style=for-the-badge&color=black"
+                alt="Download"
+                style="border-radius: 50px;"
+              />
+            </a>
           </div>
         </div>
 
@@ -84,7 +149,7 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
         <!--title (h1)-->
         <div class="text">
           <h1 style="font-size: 2em;">
-            <b>StacksUI</b> 
+            <b>StacksUI</b>
           </h1>
         </div>
 
@@ -97,11 +162,16 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
           </div>
           <div class="view">
             <ul class="v-stack">
-              <li>- StacksUI is a UI layout library for the web that uses the paradigm of stacks.</li>
-              <li>- StacksUI uses these vertical and horizontal "stacks" to layout content.</li>
+              <li>
+                - StacksUI is a UI layout library for the web that uses the
+                paradigm of stacks.
+              </li>
+              <li>
+                - StacksUI uses these vertical and horizontal "stacks" to layout
+                content.
+              </li>
               <li>- StacksUI is inspired by SwiftUI.</li>
             </ul>
-              
           </div>
         </div>
 
@@ -109,25 +179,32 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
 
         <!--installing-->
         <div class="v-stack">
-            <div class="text">
-                <h2><b>Installing</b></h2>
-            </div>
-            <div class="text">The simplest way to install StacksUI on your website is by placing this snippet in the head tag of your html.</div>
-            <div class="div">
-                <pre><code class="html">
+          <div class="text">
+            <h2><b>Installing</b></h2>
+          </div>
+          <div class="text">
+            The simplest way to install StacksUI on your website is by placing
+            this snippet in the head tag of your html.
+          </div>
+          <div class="div">
+            <pre><code class="html">
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ehne/StacksUI@master/dist/StacksUI.min.css&quot;/&gt;
 
 </code></pre>
-            </div>
+          </div>
         </div>
 
         <div class="spacer"></div>
 
         <!--v-stack-->
         <div class="v-stack" x-data="{code:false}">
-          <div class="text">
-            <h2>
-              <b>Vertical Stacks <code class="css">.v-stack</code></b>
+          <div>
+            <h2 class="h-stack m-keep middle">
+              <b class="view">Vertical Stacks</b>
+              <div class="spacer"></div>
+              
+              <span class="css-header">.v-stack</span>
+              <span class="ver">v1.0.0+</span>
             </h2>
           </div>
           <div class="text">
@@ -139,8 +216,8 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
             <div class="view">
               <div class="text">
                 To use a vertical stack, simply place the
-                <code class="css">.v-stack</code> class onto a div, and then put elements
-                inside of that parent div, this will create a v-stack.
+                <code class="css">.v-stack</code> class onto a div, and then put
+                elements inside of that parent div, this will create a v-stack.
               </div>
             </div>
             <div class="view">
@@ -195,51 +272,77 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
 
         <!--h-stack-->
         <div class="v-stack">
-          <div class="text">
-            <h2>
-              <b>Horizontal Stacks <code class="css">.h-stack</code></b>
+          <div>
+            <h2 class="h-stack m-keep middle">
+              <b style="width: fit-content;">Horizontal Stacks</b>
+              <div class="spacer"></div>
+              <span class="css-header">.h-stack</span>
+              <span class="ver">v1.0.0+</span>
+              
             </h2>
           </div>
+          <div class="text"></div>
           <div class="text">
-            <p>Horizontal stacks are like v-stacks, but horizontal. meaning that elements get put next to each other sidways.</p>
+            <p>
+              Horizontal stacks are like v-stacks, but horizontal. meaning that
+              elements get put next to each other sidways.
+            </p>
           </div>
           <div class="text">
-              <p>To create a horizontal stack, just add the class <code class="css">.h-stack</code> to a div, and then put elements inside of that parent div, this will create a h-stack.</p>
+            <p>
+              To create a horizontal stack, just add the class
+              <code class="css">.h-stack</code> to a div, and then put elements
+              inside of that parent div, this will create a h-stack.
+            </p>
           </div>
           <div class="text">
-            <p>To adjust the vertical alignment of elements within the stack, simply add one of these classes along with the <code class="css">.h-stack</code> class: <code class="css">.top, .middle, .bottom</code>.</p>
-        </div>
+            <p>
+              To adjust the vertical alignment of elements within the stack,
+              simply add one of these classes along with the
+              <code class="css">.h-stack</code> class:
+              <code class="css">.top, .middle, .bottom</code>.
+            </p>
+          </div>
           <div class="text">
-              <p><i>It is important to note that on mobile devices (screen width < 400px) h-stacks will not be horizontal, instead they will show as full-width v-stacks. To stop this from happening, simply add the <code class="css">.m-keep</code> class to the h-stack element, however it is not recommended that you do this often.</i></p>
+            <p>
+              <i
+                >It is important to note that on mobile devices (screen width <
+                400px) h-stacks will not be horizontal, instead they will show
+                as full-width v-stacks. To stop this from happening, simply add
+                the <code class="css">.m-keep</code> class to the h-stack
+                element, however it is not recommended that you do this
+                often.</i
+              >
+            </p>
           </div>
           <div class="v-stack">
-              <div class="text">
-                  <h3><b>Example</b></h3>
+            <div class="text">
+              <h3><b>Example</b></h3>
+            </div>
+            <div class="h-stack debug">
+              <div class="text">one</div>
+              <div class="text">two</div>
+              <div class="text">three</div>
+            </div>
+            <div class="v-stack" x-data="{code:false}">
+              <div class="h-stack middle m-keep">
+                <input
+                  type="checkbox"
+                  name="hStackCodeView"
+                  id="hStackCodeView"
+                  x-model="code"
+                />
+
+                <label for="hStackCodeView">View Code</label>
               </div>
-              <div class="h-stack debug">
-                  <div class="text">one</div>
-                  <div class="text">two</div>
-                  <div class="text">three</div>
-              </div>
-              <div class="v-stack" x-data="{code:false}">
-                <div class="h-stack middle m-keep">
-                    <input
-                      type="checkbox"
-                      name="hStackCodeView"
-                      id="hStackCodeView"
-                      x-model="code"
-                    />
-        
-                    <label for="hStackCodeView">View Code</label>
-                </div>
-                <div class="view" x-show="code">
-                    <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
+              <div class="view" x-show="code">
+                <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
     &lt;div class=&quot;text&quot;&gt;one&lt;/div&gt;
     &lt;div class=&quot;text&quot;&gt;two&lt;/div&gt;
     &lt;div class=&quot;text&quot;&gt;three&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                </div>
               </div>
+            </div>
           </div>
         </div>
 
@@ -247,45 +350,66 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
 
         <!--views-->
         <div class="v-stack">
+          <div class="text">
+            <h2 class="h-stack m-keep middle">
+              <b>Views</b>
+              <div class="spacer"></div>
+              <span class="css-header">.view</span>
+              <span class="ver">v1.0.0+</span>
+            </h2>
+          </div>
+          <div class="text">
+            <p>
+              Views act just like any other normal div, except for that they
+              take up the full width that they can. This is very useful in
+              h-stacks, as putting two views next to each other means that the
+              h-stack will be split 50/50. You should only use a
+              <code class="css">.view</code> class when you can't use a v-stack
+              or h-stack.
+            </p>
+          </div>
+          <div class="text">
+            <p>
+              To make a view, simply add the
+              <code class="css">.view</code> class to a div.
+            </p>
+          </div>
+          <div class="text">
+            <p>
+              <i
+                >And of course, if they are put into a h-stack they will be
+                shown as full-width on mobile, unless the h-stack has the
+                <code class="css">.m-keep</code> class.</i
+              >
+            </p>
+          </div>
+          <div class="v-stack">
             <div class="text">
-                <h2><b>Views <code class="css">.view</code></b></h2>
+              <h3><b>Example</b></h3>
             </div>
-            <div class="text">
-                <p>Views act just like any other normal div, except for that they take up the full width that they can. This is very useful in h-stacks, as putting two views next to each other means that the h-stack will be split 50/50. You should only use a <code class="css">.view</code> class when you can't use a v-stack or h-stack.</p>
+            <div class="h-stack debug">
+              <div class="view">The first half</div>
+              <div class="view">the second half.</div>
             </div>
-            <div class="text">
-                <p>To make a view, simply add the <code class="css">.view</code> class to a div.</p>
+            <div class="h-stack debug">
+              <div class="view">The first half</div>
+              <div class="view">the second half</div>
+              <div class="view">the third half.</div>
             </div>
-            <div class="text">
-                <p><i>And of course, if they are put into a h-stack they will be shown as full-width on mobile, unless the h-stack has the <code class="css">.m-keep</code> class.</i></p>
+          </div>
+          <div class="v-stack" x-data="{code:false}">
+            <div class="h-stack middle m-keep">
+              <input
+                type="checkbox"
+                name="viewCodeView"
+                id="viewCodeView"
+                x-model="code"
+              />
+
+              <label for="viewCodeView">View Code</label>
             </div>
-            <div class="v-stack">
-                <div class="text">
-                    <h3><b>Example</b></h3>
-                </div>
-                <div class="h-stack debug">
-                    <div class="view">The first half</div>
-                    <div class="view">the second half.</div>
-                </div>
-                <div class="h-stack debug">
-                    <div class="view">The first half</div>
-                    <div class="view">the second half</div>
-                    <div class="view">the third half.</div>
-                </div>
-            </div>
-            <div class="v-stack" x-data="{code:false}">
-                <div class="h-stack middle m-keep">
-                    <input
-                      type="checkbox"
-                      name="viewCodeView"
-                      id="viewCodeView"
-                      x-model="code"
-                    />
-        
-                    <label for="viewCodeView">View Code</label>
-                </div>
-                <div class="view" x-show="code">
-                    <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
+            <div class="view" x-show="code">
+              <pre><code class="html">&lt;div class=&quot;h-stack&quot;&gt;
     &lt;div class=&quot;view&quot;&gt;The first half&lt;/div&gt;
     &lt;div class=&quot;view&quot;&gt;the second half.&lt;/div&gt;
 &lt;/div&gt;
@@ -294,52 +418,64 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
     &lt;div class=&quot;view&quot;&gt;the second half&lt;/div&gt;
     &lt;div class=&quot;view&quot;&gt;the third half.&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                </div>
             </div>
+          </div>
         </div>
 
         <div class="spacer"></div>
 
         <!--spacer-->
         <div class="v-stack">
+          <div class="text">
+            <h2 class="h-stack m-keep middle">
+              <b>Spacer</b>
+              <div class="spacer"></div>
+              <span class="css-header">.spacer</span>
+              <span class="ver">v1.0.0+</span>
+            </h2>
+          </div>
+          <div class="text">
+            <p>
+              A spacer will automatically fill in the space between two elements
+              in a h-stack. When a spacer is put into a v-stack, it will create
+              a vertical gap between the elements.
+            </p>
+          </div>
+          <div class="text">
+            <p>
+              To add a spacer, just add the
+              <code class="css">.spacer</code> class to a div in a stack.
+            </p>
+          </div>
+          <div class="v-stack">
             <div class="text">
-                <h2><b>Spacer <code class="css">.spacer</code></b></h2>
+              <h3><b>Example</b></h3>
             </div>
-            <div class="text">
-                <p>A spacer will automatically fill in the space between two elements in a h-stack. When a spacer is put into a v-stack, it will create a vertical gap between the elements.</p>
+            <div class="h-stack debug middle m-keep">
+              <div class="text">left</div>
+              <div class="spacer"></div>
+              <div class="text">right</div>
             </div>
-            <div class="text">
-                <p>To add a spacer, just add the <code class="css">.spacer</code> class to a div in a stack.</p>
+            <div class="v-stack debug">
+              <div class="text">top</div>
+              <div class="spacer"></div>
+              <div class="text">bottom</div>
             </div>
-            <div class="v-stack">
-                <div class="text">
-                    <h3><b>Example</b></h3>
-                </div>
-                <div class="h-stack debug middle m-keep">
-                    <div class="text">left</div>
-                    <div class="spacer"></div>
-                    <div class="text">right</div>
-                </div>
-                <div class="v-stack debug">
-                    <div class="text">top</div>
-                    <div class="spacer"></div>
-                    <div class="text">bottom</div>
-                </div>
-            </div>
+          </div>
 
-            <div class="v-stack" x-data="{code:false}">
-                <div class="h-stack middle m-keep">
-                    <input
-                      type="checkbox"
-                      name="spacerCodeView"
-                      id="spacerCodeView"
-                      x-model="code"
-                    />
-        
-                    <label for="spacerCodeView">View Code</label>
-                </div>
-                <div class="view" x-show="code">
-                    <pre><code class="html">&lt;div class=&quot;h-stack middle m-keep&quot;&gt;
+          <div class="v-stack" x-data="{code:false}">
+            <div class="h-stack middle m-keep">
+              <input
+                type="checkbox"
+                name="spacerCodeView"
+                id="spacerCodeView"
+                x-model="code"
+              />
+
+              <label for="spacerCodeView">View Code</label>
+            </div>
+            <div class="view" x-show="code">
+              <pre><code class="html">&lt;div class=&quot;h-stack middle m-keep&quot;&gt;
     &lt;div class=&quot;text&quot;&gt;left&lt;/div&gt;
     &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;text&quot;&gt;right&lt;/div&gt;
@@ -349,8 +485,8 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
     &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;text&quot;&gt;bottom&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                </div>
             </div>
+          </div>
         </div>
 
         <div class="spacer"></div>
@@ -358,13 +494,27 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
         <!--list-->
         <div class="v-stack">
           <div class="text">
-            <h2><b>List <code class="css">.list</code></b></h2>
+            <h2 class="h-stack m-keep middle">
+              <b>List</b>
+              <div class="spacer"></div>
+              <span class="css-header">.list</span>
+              <span class="ver">v1.0.0+</span>
+            </h2>
           </div>
           <div class="text">
-            <p>Lists are similar to v-stacks, however, they have a couple of nice features. The list element will assume that its immediate children stacks (either h-stack or v-stack) are rows of the list, separating each row by a line.</p>
+            <p>
+              Lists are similar to v-stacks, however, they have a couple of nice
+              features. The list element will assume that its immediate children
+              stacks (either h-stack or v-stack) are rows of the list,
+              separating each row by a line.
+            </p>
           </div>
           <div class="text">
-            <p>To create a list, just use the <code class="css">.list</code> class on an element containing stacks.</p>
+            <p>
+              To create a list, just use the
+              <code class="css">.list</code> class on an element containing
+              stacks.
+            </p>
           </div>
           <div class="v-stack">
             <div class="text">
@@ -383,34 +533,49 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
             </div>
             <div class="v-stack" x-data="{code:false}">
               <div class="h-stack middle m-keep">
-                  <input
-                    type="checkbox"
-                    name="listCodeView"
-                    id="listCodeView"
-                    x-model="code"
-                  />
-      
-                  <label for="listCodeView">View Code</label>
+                <input
+                  type="checkbox"
+                  name="listCodeView"
+                  id="listCodeView"
+                  x-model="code"
+                />
+
+                <label for="listCodeView">View Code</label>
               </div>
               <div class="view" x-show="code">
-                  <pre><code class="html">&lt;div class=&quot;list&quot;&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;One&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Two&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Three&lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;&#10;</code></pre>
+                <pre><code class="html">&lt;div class=&quot;list&quot;&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;One&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Two&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;h-stack&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Three&lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;&#10;</code></pre>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="spacer"></div>
 
         <!--nav list-->
         <div class="v-stack">
           <div class="text">
-            <h2><b>Navigation List <code class="css">.nav</code></b></h2>
+            <h2 class="h-stack m-keep middle">
+              <b>Navigation List</b>
+              <div class="spacer"></div>
+              <span class="css-header">.nav</span>
+              <span class="ver">v1.0.0+</span>
+            </h2>
           </div>
           <div class="text">
-            <p>Navigation lists are a subset of list, that have a lot of the same features, however a navigation list is designed to only be used with a list of links for the user to select.</p>
+            <p>
+              Navigation lists are a subset of list, that have a lot of the same
+              features, however a navigation list is designed to only be used
+              with a list of links for the user to select.
+            </p>
           </div>
           <div class="text">
-            <p>To create a navigation list, simply add the <code class="css">.nav</code> class to an element that already has the <code class="css">.list</code> class. You will also need to turn each stack into a <code class="css">a</code> tag (rather than a <code class="css">div</code>).</p>
+            <p>
+              To create a navigation list, simply add the
+              <code class="css">.nav</code> class to an element that already has
+              the <code class="css">.list</code> class. You will also need to
+              turn each stack into a <code class="css">a</code> tag (rather than
+              a <code class="css">div</code>).
+            </p>
           </div>
           <div class="v-stack">
             <div class="text">
@@ -418,33 +583,100 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
             </div>
             <div class="list nav">
               <a href="https://github.com/ehne/StacksUI" class="h-stack m-keep">
-                  <div class="text">Github</div>
-                  <div class="spacer"></div>
-                  <div class="text">></div>
+                <div class="text">Github</div>
+                <div class="spacer"></div>
+                <div class="text">></div>
               </a>
-              <a href="https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css" class="h-stack m-keep">
-                  <div class="text">Download</div>
-                  <div class="spacer"></div>
-                  <div class="text">></div>
+              <a
+                href="https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css"
+                class="h-stack m-keep"
+              >
+                <div class="text">Download</div>
+                <div class="spacer"></div>
+                <div class="text">></div>
               </a>
             </div>
             <div class="v-stack" x-data="{code:false}">
               <div class="h-stack middle m-keep">
-                  <input
-                    type="checkbox"
-                    name="navCodeView"
-                    id="navCodeView"
-                    x-model="code"
-                  />
-      
-                  <label for="navCodeView">View Code</label>
+                <input
+                  type="checkbox"
+                  name="navCodeView"
+                  id="navCodeView"
+                  x-model="code"
+                />
+
+                <label for="navCodeView">View Code</label>
               </div>
               <div class="view" x-show="code">
-                  <pre><code class="html">&lt;div class=&quot;list nav&quot;&gt;&#10;    &lt;a href=&quot;https://github.com/ehne/StacksUI&quot; class=&quot;h-stack m-keep&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Github&lt;/div&gt;&#10;        &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;&#10;        &lt;div class=&quot;text&quot;&gt;&gt;&lt;/div&gt;&#10;    &lt;/a&gt;&#10;    &lt;a href=&quot;https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css&quot; class=&quot;h-stack m-keep&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Download&lt;/div&gt;&#10;        &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;&#10;        &lt;div class=&quot;text&quot;&gt;&gt;&lt;/div&gt;&#10;    &lt;/a&gt;&#10;&lt;/div&gt;&#10;</code></pre>
+                <pre><code class="html">&lt;div class=&quot;list nav&quot;&gt;&#10;    &lt;a href=&quot;https://github.com/ehne/StacksUI&quot; class=&quot;h-stack m-keep&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Github&lt;/div&gt;&#10;        &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;&#10;        &lt;div class=&quot;text&quot;&gt;&gt;&lt;/div&gt;&#10;    &lt;/a&gt;&#10;    &lt;a href=&quot;https://github.com/ehne/StacksUI/blob/master/dist/StacksUI.min.css&quot; class=&quot;h-stack m-keep&quot;&gt;&#10;        &lt;div class=&quot;text&quot;&gt;Download&lt;/div&gt;&#10;        &lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;&#10;        &lt;div class=&quot;text&quot;&gt;&gt;&lt;/div&gt;&#10;    &lt;/a&gt;&#10;&lt;/div&gt;&#10;</code></pre>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="spacer"></div>
+
+        <!-- customisation -->
+        <div class="v-stack">
+          <div class="text">
+            <h2 class="h-stack m-keep middle">
+              <b>Customisation</b>
+              <div class="spacer"></div>
+              <span class="ver">v1.1.0+</span>
+            </h2>
+          </div>
+          <div class="text">
+            <p>
+              You can customise the point at which h-stacks and related elements
+              collapse from flexbox into block styles.
+            </p>
+          </div>
+          <div class="text">
+            <p>
+              To do this, copy this code, and add it to the top of your html
+              head, just below where you imported StacksUI.
+            </p>
+          </div>
+          <pre><code class="html">&#x3C;style&#x3E;
+  :root{
+    --SUI-m:400px
+  }
+&#x3C;/style&#x3E;</code></pre>
+          <div class="text">
+            <p>
+              From there, change the <code class="css">400px</code> to any value
+              you choose. If the value you have entered is an invalid css width,
+              StacksUI will default to <code class="css">400px</code>
+            </p>
+          </div>
+          <div class="text">
+            <p>You can customise all the variables the same way.</p>
+          </div>
+          <div class="view tg">
+            <table >
+              <thead>
+                <tr>
+                  <th class="tg-0pky" style="white-space:nowrap;">Variable</th>
+                  <th class="tg-0pky">Default</th>
+                  <th class="tg-0pky">Use</th>
+                  <th class="tg-0pky">Version Introduced</th>
+                </tr>
+              </thead>
+              <tbody x-data="vars">
+                <template x-for="i in vars">
+                  <tr>
+                    <td class="tg-0pky" style="white-space:nowrap;"><code class="css" x-text="i.var">--SUI-m</code></td>
+                    <td class="tg-0pky"><code class="hljs-attr" x-text="i.default">400px</code></td>
+                    <td class="tg-0pky" x-text="i.use">h-stack breakpoint</td>
+                    <td class="tg-0pky"><code class="ver" style="font-size:1em" x-text="i.ver">v1.1.0</code></td>
+                  </tr>
+                </template>
+                
+              </tbody>
+              </table>
+          </div>
+        </div>
+        <div class="spacer"></div>
       </div>
 
       <!--footer-->
@@ -452,30 +684,40 @@ html { font-family: 'Inter', sans-serif; font-size:1em }
         <div class="spacer"></div>
         <div class="spacer"></div>
         <div class="h-stack m-keep">
-            <div class="spacer"></div>
-            <div class="text">
-                <p>made by <a href="https://darcylf.me">darcylf</a> in 2020</p>
-            </div>
-            <div class="spacer"></div>
+          <div class="spacer"></div>
+          <div class="text">
+            <p>made by <a href="https://darcylf.me">darcylf</a> in 2020</p>
+          </div>
+          <div class="spacer"></div>
         </div>
         <div class="h-stack m-keep">
-            <div class="spacer"></div>
-            <div class="v-stack">
-                <div class="h-stack middle m-keep">
-                    <input
-                      type="checkbox"
-                      name="debug"
-                      id="debug"
-                      x-model="debug"
-                    />
-        
-                    <label for="debug">Enable debug mode</label>
-                  </div>
+          <div class="spacer"></div>
+          <div class="v-stack">
+            <div class="h-stack middle m-keep">
+              <input type="checkbox" name="debug" id="debug" x-model="debug" />
+
+              <label for="debug">Enable debug mode</label>
             </div>
-            <div class="spacer"></div>
+          </div>
+          <div class="spacer"></div>
         </div>
       </div>
-      
     </div>
   </body>
+
+  <script>
+    var vars = [{
+      var:"--SUI-m",
+      default: "400px",
+      use:"h-stack breakpoint",
+      ver:"v1.1.0"
+    },
+    {
+      var:"--SUI-d",
+      default: "600px",
+      use:"width of the .main-view",
+      ver:"v1.1.0"
+    }]
+
+  </script>
 </html>

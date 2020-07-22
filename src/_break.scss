@@ -1,5 +1,7 @@
-$phone-width: 400px;
-$desktop-width: 600px;
+
+
+$phone-width: var(--SUI-m,400px);
+$desktop-width: var(--SUI-d,600px);
 
 @mixin phone {
   @media (max-width: #{$phone-width}) {
