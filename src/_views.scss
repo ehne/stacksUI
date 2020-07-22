@@ -1,6 +1,6 @@
 .main-view{
 	padding:8px;
-	max-width:600px;
+	max-width:var(--SUI-d,600px);
 	@include margin(0 auto);
 	&:first-child{
 		margin-top:8px
